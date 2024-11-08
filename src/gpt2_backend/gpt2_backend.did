@@ -1,0 +1,14 @@
+type ModelInferenceResult = variant {
+    Ok: vec int64;
+    Err: text;
+};
+
+service : {
+
+    "model_inference": (nat8, vec int64) -> (ModelInferenceResult);
+    "setup_model": () -> (opt text);
+    "append_model_bytes": (vec nat8) -> (opt text);
+    "model_bytes_length": () -> (nat64) query;
+    "clear_model_bytes": () -> (opt text);
+
+}
