@@ -109,40 +109,61 @@ We will be using Dfinity's `dfx` for our development environment.
 ## Run
 
 dfx start --clean
+
 dfx deploy
+
 ic-file-uploader gpt2_backend append_model_bytes model.onnx
+
 dfx canister call gpt2_backend setup_model
 
+
 optional check length
+
 dfx canister call gpt2_backend model_bytes_length
 
 Use GPT-2's Byte Pair Encoding (BPE) tokenizer in ChatGPT for example.
 
 Asking
+
 "transformers are more powerful"
 
 dfx canister call gpt2_backend model_inference '(14, vec {26905; 30906; 48451; 37166; 13424; 14305})'
 
 Prints
+
 286 : " the"
+
 6_824 : " first"
+
 284 : " in"
+
 4_589 : " line"
+
 284 : " in"
+
 262 : " a"
+
 976 : " text"
 
 Asking
+
 "who are you?"
 
 dfx canister call gpt2_backend model_inference '(7, vec {750; 389; 345; 30})'
 
 Prints
+
 198: (newline or line break character)
+
 198: (newline or line break character)
+
 40: "I"
+
 1101: " did"
+
 407: " tell"
+
 1654: " you"
+
 13: "!"
 
