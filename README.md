@@ -121,7 +121,7 @@ Use GPT-2's Byte Pair Encoding (BPE) tokenizer in ChatGPT for example.
 Asking
 "transformers are more powerful"
 
-dfx canister call gpt2_backend model_inference '(7, vec {26905; 30906; 48451; 37166; 13424; 14305})'
+dfx canister call gpt2_backend model_inference '(14, vec {26905; 30906; 48451; 37166; 13424; 14305})'
 
 Prints
 286 : " the"

@@ -1,1 +1,0 @@
-These files were created so that the tokenizer could included in the future in this project instead of calling an external one.

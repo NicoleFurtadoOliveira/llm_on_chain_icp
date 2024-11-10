@@ -1,5 +1,14 @@
 {
-  "canisters": {
+  "canisters": { "gpt2_frontend": {
+    "dependencies": [
+      "gpt2_backend"
+    ],
+    "source": [
+      "src/gpt2_frontend/dist"
+    ],
+    "type": "assets",
+    "workspace": "gpt2_frontend"
+  },
     "gpt2_backend": {
       "candid": "src/gpt2_backend/gpt2_backend.did",
       "package": "gpt2_backend",
