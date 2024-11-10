@@ -2,13 +2,6 @@
 
 This project was an adaptation of https://github.com/modclub-app/rust-connect-py-ai-to-ic/tree/main in order to participate on the ICP Hackerhouse on 9-10/11/2024 in the context of AI:CON Crypto Conference in Lisbon.
 
-We can usually infer 7 tokens max before we run out of instructions limit:
-
-Error: Failed update call.
-Caused by: The replica returned a rejection error: reject code CanisterError, reject message Error from Canister bkyz2-fmaaa-aaaaa-qaaaq-cai: Canister exceeded the limit of 40000000000 instructions for single message execution..
-Try optimizing this method to consume fewer instructions or split the work across multiple messages. See documentation: http://internetcomputer.org/docs/current/references/execution-errors#instruction-limit-exceeded, error code None
- 
-
 ## Setup
 
 Install Python, Rust and Cargo
@@ -121,13 +114,17 @@ optional check length
 
 dfx canister call gpt2_backend model_bytes_length
 
-Use GPT-2's Byte Pair Encoding (BPE) tokenizer in ChatGPT for example.
+
+On the frontend "tell me about you" with 15 tokens responds with "The code example demonstrates that OpenAI's transformers are highly capable in natural language generation."
+
+
+Using GPT-2's Byte Pair Encoding (BPE) tokenizer in ChatGPT for example.
 
 Asking
 
 "transformers are more powerful"
 
-dfx canister call gpt2_backend model_inference '(14, vec {26905; 30906; 48451; 37166; 13424; 14305})'
+dfx canister call gpt2_backend model_inference '(7, vec {26905; 30906; 48451; 37166; 13424; 14305})'
 
 Prints
 
@@ -144,26 +141,4 @@ Prints
 262 : " a"
 
 976 : " text"
-
-Asking
-
-"who are you?"
-
-dfx canister call gpt2_backend model_inference '(7, vec {750; 389; 345; 30})'
-
-Prints
-
-198: (newline or line break character)
-
-198: (newline or line break character)
-
-40: "I"
-
-1101: " did"
-
-407: " tell"
-
-1654: " you"
-
-13: "!"
 
